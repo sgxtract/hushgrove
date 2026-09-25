@@ -24,7 +24,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: `${siteConfig.name} — ${siteConfig.author}`,
+  title: `${siteConfig.name} • ${siteConfig.author}`,
   description: siteConfig.description,
 };
 

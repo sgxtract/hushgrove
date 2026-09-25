@@ -6,6 +6,20 @@ export type IconComponent = ComponentType<{
   "aria-hidden"?: boolean;
 }>;
 
+export interface Profile {
+  name: string;
+  role: string;
+  location: string;
+  availability: string;
+  bio: string;
+  avatar?: string; // path in /public, e.g. "/avatar.jpg"
+  resumeUrl: string;
+  email: string;
+  featuredStack: string[];
+  exploring: string;
+  socials: SocialLink[];
+}
+
 export interface Skill {
   name: string;
   icon?: IconComponent;

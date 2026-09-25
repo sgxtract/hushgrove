@@ -1,5 +1,5 @@
 export const siteConfig = {
-//   name: "nja systems",
+  name: "Portfolio",
   handle: "nja systems",
   author: "Nestor Jr Agnis",
   description:
