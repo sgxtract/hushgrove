@@ -1,4 +1,5 @@
 import { Navbar } from "@/components/layout/navbar/Navbar";
+import { Hero } from "@/components/sections/hero/Hero";
 import { SectionCard } from "@/components/ui/SectionCard";
 import { navLinks } from "@/data/navigation";
 
@@ -6,7 +7,8 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <main className="pt-16">
+      <main>
+        <Hero />
         {navLinks.map(({ id, label }) => (
           <SectionCard
             key={id}
