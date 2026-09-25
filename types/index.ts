@@ -80,6 +80,12 @@ export interface ExperienceItem {
   tags: string[];
 }
 
+export interface ExperienceContent {
+  tag: string;
+  title: string;
+  items: ExperienceItem[];
+}
+
 export interface NavLink {
   id: string; // matches the section's id, e.g. "about"
   label: string; // tab text, e.g. "about.tsx"
