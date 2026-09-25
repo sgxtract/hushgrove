@@ -23,7 +23,7 @@ export function SectionCard({
     <section
       id={id}
       aria-labelledby={titleId}
-      className="relative z-10 mx-auto max-w-4xl scroll-mt-20 px-6 pb-16"
+      className="relative z-10 mx-auto max-w-4xl scroll-mt-28 lg:scroll-mt-20 px-6 pb-16"
     >
       <GlassCard>
         <WindowBar filename={filename} />
