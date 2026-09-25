@@ -8,8 +8,7 @@ export function GlassCard({
   return (
     <div
       className={cn(
-        "glass-rim overflow-hidden rounded-2xl bg-card shadow-glass",
-        "backdrop-blur-xl backdrop-saturate-150",
+        "overflow-hidden rounded-2xl border border-line bg-card shadow-glass backdrop-blur-[18px]",
         className,
       )}
       {...props}
