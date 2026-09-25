@@ -16,10 +16,6 @@
   --shadow: rgb(0 0 0 / 0.28);
   --texture: rgb(211 198 170 / 0.05);
 
-  /* Glass rim: where light catches the edge */
-  --rim-strong: rgb(255 255 255 / 0.3);
-  --rim-soft: rgb(255 255 255 / 0.1);
-
   --green: #a7c080;
   --aqua: #83c092;
   --yellow: #dbbc7f;
@@ -134,32 +130,4 @@
       color-mix(in oklab, var(--aqua) 10%, transparent),
       transparent 70%
     );
-}
-
-/* Liquid-glass rim: a gradient border that catches light at the top-left */
-@utility glass-rim {
-  position: relative;
-
-  &::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    padding: 1px;
-    background: linear-gradient(
-      135deg,
-      var(--rim-strong),
-      var(--line) 40%,
-      var(--line) 70%,
-      var(--rim-soft)
-    );
-    -webkit-mask:
-      linear-gradient(#000 0 0) content-box,
-      linear-gradient(#000 0 0);
-    -webkit-mask-composite: xor;
-    mask:
-      linear-gradient(#000 0 0) content-box exclude,
-      linear-gradient(#000 0 0);
-    pointer-events: none;
-  }
 }
