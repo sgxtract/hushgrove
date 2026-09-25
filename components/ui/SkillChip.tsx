@@ -1,10 +1,10 @@
-import type { IconComponent } from "@/types";
+import type { IconComponent, SkillVariant } from "@/types";
 import { cn } from "@/lib/utils";
 
 interface SkillChipProps {
   name: string;
   icon?: IconComponent;
-  variant?: "primary" | "secondary";
+  variant?: SkillVariant;
 }
 
 const variants = {

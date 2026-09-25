@@ -1,8 +1,11 @@
 import { Navbar } from "@/components/layout/navbar/Navbar";
 import { About } from "@/components/sections/About";
 import { Hero } from "@/components/sections/hero/Hero";
+import { Skills } from "@/components/sections/Skills";
 import { SectionCard } from "@/components/ui/SectionCard";
 import { navLinks } from "@/data/navigation";
+
+const builtSections = ["about", "skills"];
 
 export default function Home() {
   return (
@@ -11,8 +14,9 @@ export default function Home() {
       <main>
         <Hero />
         <About />
+        <Skills />
         {navLinks
-          .filter(({ id }) => id !== "about")
+          .filter(({ id }) => !builtSections.includes(id))
           .map(({ id, label }) => (
             <SectionCard
               key={id}
