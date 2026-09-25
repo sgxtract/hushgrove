@@ -4,6 +4,7 @@ import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import "./globals.css";
 
 import { siteConfig } from "@/data/site";
+import { GlowBackground } from "@/components/effects/GlowBackground";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -43,6 +44,7 @@ export default function RootLayout({
           defaultTheme="system"
           enableSystem
         >
+          <GlowBackground />
           {children}
         </ThemeProvider>
       </body>

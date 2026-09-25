@@ -49,7 +49,7 @@ export function CodeCard() {
   return (
     <GlassCard className="min-w-0 animate-float-in motion-reduce:animate-none">
       <WindowBar filename="developer.ts" />
-      <pre className="overflow-x-auto p-5 font-mono text-[0.78rem] leading-7">
+      <pre className="whitespace-pre-wrap wrap-break-word p-5 font-mono text-[0.78rem] leading-7">
         <code>
           <span className="block">
             <Token type="keyword">const</Token>{" "}
