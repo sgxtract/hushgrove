@@ -1,26 +1,88 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Lets `dark:` utilities follow next-themes' data-theme attribute */
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+/* ---------- Everforest Dark (default) ---------- */
+:root,
+[data-theme="dark"] {
+  --background: #2d353b;
+  --surface: #343f44;
+  --card: rgb(61 72 77 / 0.45);
+  --line: rgb(211 198 170 / 0.14);
+  --line-strong: rgb(211 198 170 / 0.24);
+  --foreground: #d3c6aa;
+  --muted: #9da9a0;
+  --shadow: rgb(0 0 0 / 0.28);
+  --texture: rgb(211 198 170 / 0.05);
+
+  --green: #a7c080;
+  --aqua: #83c092;
+  --yellow: #dbbc7f;
+  --blue: #7fbbb3;
+  --red: #e67e80;
 }
 
+/* ---------- Everforest Light ---------- */
+[data-theme="light"] {
+  --background: #fdf6e3;
+  --surface: #f4f0d9;
+  --card: rgb(255 253 244 / 0.55);
+  --line: rgb(92 106 114 / 0.14);
+  --line-strong: rgb(92 106 114 / 0.24);
+  --foreground: #5c6a72;
+  --muted: #829181;
+  --shadow: rgb(92 106 114 / 0.14);
+  --texture: rgb(92 106 114 / 0.07);
+
+  --green: #8da101;
+  --aqua: #35a77c;
+  --yellow: #b98d1f;
+  --blue: #3a94c5;
+  --red: #f85552;
+}
+
+/* ---------- Expose tokens to Tailwind ---------- */
 @theme inline {
   --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-card: var(--card);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-muted: var(--muted);
+
+  --color-green: var(--green);
+  --color-aqua: var(--aqua);
+  --color-yellow: var(--yellow);
+  --color-blue: var(--blue);
+  --color-red: var(--red);
+
+  --font-display: var(--font-space-grotesk);
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-jetbrains-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* ---------- Base styles ---------- */
+@layer base {
+  html {
+    scroll-behavior: smooth;
   }
-}
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  body {
+    background-color: var(--background);
+    background-image: radial-gradient(var(--texture) 1px, transparent 1px);
+    background-size: 22px 22px;
+    color: var(--foreground);
+    -webkit-font-smoothing: antialiased;
+    transition:
+      background-color 0.35s ease,
+      color 0.35s ease;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
 }
