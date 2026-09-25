@@ -3,6 +3,8 @@ import { Space_Grotesk, Inter, JetBrains_Mono } from "next/font/google";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import "./globals.css";
 
+import { siteConfig } from "@/data/site";
+
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
   variable: "--font-space-grotesk",
@@ -22,9 +24,8 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "hushgrove — Your Name",
-  description:
-    "Portfolio of Your Name, a full stack developer building reliable web apps with Next.js, TypeScript, and PostgreSQL.",
+  title: `${siteConfig.name} — ${siteConfig.author}`,
+  description: siteConfig.description,
 };
 
 export default function RootLayout({

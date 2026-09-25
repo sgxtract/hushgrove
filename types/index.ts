@@ -38,3 +38,8 @@ export interface ExperienceItem {
   highlights: string[];
   tags: string[];
 }
+
+export interface NavLink {
+  id: string; // matches the section's id, e.g. "about"
+  label: string; // tab text, e.g. "about.tsx"
+}
