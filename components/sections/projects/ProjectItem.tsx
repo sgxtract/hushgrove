@@ -2,7 +2,6 @@ import { ArrowUpRight } from "lucide-react";
 import { FaGithub } from "react-icons/fa6";
 import { SkillChip } from "@/components/ui/SkillChip";
 import { skillIcons } from "@/data/skills";
-import { GrMysql } from "react-icons/gr";
 import { cn } from "@/lib/utils";
 import type { IconComponent, Project, ProjectStatus } from "@/types";
 

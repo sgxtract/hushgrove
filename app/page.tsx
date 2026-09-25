@@ -3,10 +3,14 @@ import { About } from "@/components/sections/About";
 import { Hero } from "@/components/sections/hero/Hero";
 import { Skills } from "@/components/sections/Skills";
 import { Projects } from "@/components/sections/projects/Projects";
+import { Experience } from "@/components/sections/experience/Experience";
 import { SectionCard } from "@/components/ui/SectionCard";
 import { navLinks } from "@/data/navigation";
 
-const builtSections = ["about", "skills", "projects"];
+// Rebuild the page daily so "Present" durations stay current
+export const revalidate = 86400;
+
+const builtSections = ["about", "skills", "projects", "experience"];
 
 export default function Home() {
   return (
@@ -17,6 +21,7 @@ export default function Home() {
         <About />
         <Skills />
         <Projects />
+        <Experience />
         {navLinks
           .filter(({ id }) => !builtSections.includes(id))
           .map(({ id, label }) => (
