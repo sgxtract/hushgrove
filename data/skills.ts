@@ -19,6 +19,7 @@ import {
   SiTypescript,
   SiUbuntu,
 } from "react-icons/si";
+import { GrMysql } from "react-icons/gr";
 import { VscVscode } from "react-icons/vsc";
 import type { SkillsContent } from "@/types";
 
@@ -57,7 +58,14 @@ export const skills: SkillsContent = {
         { name: "OpenAI / ChatGPT", icon: AiFillOpenAI },
         { name: "Google Sheets", icon: SiGooglesheets },
         { name: "Microsoft Apps", icon: FaMicrosoft },
+        { name: "MySQL", icon: GrMysql },
       ],
     },
   ],
 };
+
+export const skillIcons = new Map(
+  skills.groups
+    .flatMap((group) => group.items)
+    .map((skill) => [skill.name, skill.icon]),
+);
