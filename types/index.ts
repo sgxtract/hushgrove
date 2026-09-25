@@ -96,4 +96,5 @@ export interface ContactContent {
   title: string;
   message: string;
   socialsLabel: string;
+  emailSubject: string;
 }

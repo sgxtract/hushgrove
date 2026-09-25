@@ -1,4 +1,4 @@
-import { CopyButton } from "@/components/ui/CopyButton";
+import { EmailField } from "@/components/ui/EmailField";
 import { SectionCard } from "@/components/ui/SectionCard";
 import { SocialLinks } from "@/components/ui/SocialLinks";
 import { contact } from "@/data/contact";
@@ -17,7 +17,11 @@ export function Contact() {
         {contact.message}
       </p>
 
-      <CopyButton value={profile.email} className="mt-6" />
+      <EmailField
+        email={profile.email}
+        subject={contact.emailSubject}
+        className="mt-6"
+      />
 
       <div className="mt-6 flex flex-wrap items-center gap-4">
         <span className="font-mono text-xs text-muted">

@@ -45,22 +45,23 @@ export function Button({
     </>
   );
 
-  if (external) {
+  const isInternalRoute = href.startsWith("/") && !external;
+
+  if (isInternalRoute) {
     return (
-      <a
-        href={href}
-        target="_blank"
-        rel="noopener noreferrer"
-        className={classes}
-      >
+      <Link href={href} className={classes}>
         {content}
-      </a>
+      </Link>
     );
   }
 
   return (
-    <Link href={href} className={classes}>
+    <a
+      href={href}
+      className={classes}
+      {...(external && { target: "_blank", rel: "noopener noreferrer" })}
+    >
       {content}
-    </Link>
+    </a>
   );
 }
