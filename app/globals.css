@@ -66,6 +66,12 @@
   --font-mono: var(--font-jetbrains-mono);
 
   --shadow-glass: 0 20px 50px var(--shadow);
+
+  /* For Firelies Effect */
+  --animate-firefly:
+    firefly-float var(--float-duration, 10s) ease-in-out infinite,
+    firefly-blink var(--blink-duration, 4.5s) ease-in-out infinite;
+  --animate-spark: spark-rise 0.8s ease-out forwards;
 }
 
 /* ---------- Static tokens ---------- */
@@ -130,4 +136,54 @@
       color-mix(in oklab, var(--aqua) 10%, transparent),
       transparent 70%
     );
+}
+
+/* ---------- Fireflies ---------- */
+@keyframes firefly-float {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(16px, -20px);
+  }
+  50% {
+    transform: translate(-8px, -34px);
+  }
+  75% {
+    transform: translate(-20px, -10px);
+  }
+}
+
+@keyframes firefly-blink {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes spark-rise {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.6);
+  }
+  15% {
+    opacity: 0.9;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, calc(-50% - 22px)) scale(0.85);
+  }
+}
+
+/* A glowing dot in the element's current text color */
+@utility firefly-glow {
+  background-color: currentColor;
+  box-shadow:
+    0 0 6px 2px currentColor,
+    0 0 14px 4px color-mix(in oklab, currentColor 32%, transparent);
 }

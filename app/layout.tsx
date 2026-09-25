@@ -4,6 +4,8 @@ import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import "./globals.css";
 
 import { siteConfig } from "@/data/site";
+import { CursorSparks } from "@/components/effects/CursorSparks";
+import { Fireflies } from "@/components/effects/Fireflies";
 import { GlowBackground } from "@/components/effects/GlowBackground";
 
 const spaceGrotesk = Space_Grotesk({
@@ -45,6 +47,8 @@ export default function RootLayout({
           enableSystem
         >
           <GlowBackground />
+          <Fireflies />
+          <CursorSparks />
           {children}
         </ThemeProvider>
       </body>
