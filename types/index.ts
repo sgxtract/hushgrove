@@ -63,6 +63,12 @@ export interface Project {
   liveUrl?: string;
 }
 
+export interface ProjectsContent {
+  tag: string;
+  title: string;
+  items: Project[];
+}
+
 export interface ExperienceItem {
   role: string;
   company: string;
