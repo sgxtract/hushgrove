@@ -1,4 +1,5 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
+import { brand } from "@/lib/brand";
 import { Space_Grotesk, Inter, JetBrains_Mono } from "next/font/google";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import "./globals.css";
@@ -26,9 +27,33 @@ const jetbrainsMono = JetBrains_Mono({
   display: "swap",
 });
 
+const title = `${siteConfig.name} • ${siteConfig.author}`;
+
 export const metadata: Metadata = {
-  title: `${siteConfig.name} • ${siteConfig.author}`,
+  metadataBase: new URL(siteConfig.url),
+  title,
   description: siteConfig.description,
+  authors: [{ name: siteConfig.author, url: siteConfig.url }],
+  openGraph: {
+    type: "website",
+    url: "/",
+    siteName: siteConfig.name,
+    title,
+    description: siteConfig.description,
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description: siteConfig.description,
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: dark)", color: brand.dark.background },
+    { media: "(prefers-color-scheme: light)", color: brand.light.background },
+  ],
 };
 
 export default function RootLayout({

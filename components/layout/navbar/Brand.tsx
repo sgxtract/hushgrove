@@ -1,4 +1,3 @@
-import { WindowDots } from "@/components/ui/WindowDots";
 import { siteConfig } from "@/data/site";
 
 export function Brand() {

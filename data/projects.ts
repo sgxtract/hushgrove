@@ -11,14 +11,14 @@ export const projects: ProjectsContent = {
       description:
         "A procurement monitoring platform built for the Local Government of Sorsogon. Staff submit and track procurement requests through a structured workflow, with public visibility into active procurements for transparency.",
       tags: ["Next.js", "TypeScript", "PostgreSQL", "Supabase"],
-      sourceUrl: "https://github.com/your-username/pms",
+      sourceUrl: "https://github.com/sgxtract/pms",
     },
     {
       title: "Online Parking Management System (OPMS)",
       description:
         "A parking reservation system that lets users book a specific slot in advance, backed by a PHP/Laravel REST API returning JSON, consumed by a native Android app built in Java.",
       tags: ["PHP", "Laravel", "MySQL", "REST API", "JSON", "Java", "Android"],
-      sourceUrl: "https://github.com/your-username/opms",
+      sourceUrl: "https://github.com/sgxtract/opms",
     },
   ],
 };
