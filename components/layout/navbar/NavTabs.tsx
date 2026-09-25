@@ -10,7 +10,7 @@ export function NavTabs({ className }: { className?: string }) {
   const activeId = useActiveSection(sectionIds);
 
   return (
-    <ul className={cn("no-scrollbar flex overflow-x-auto", className)}>
+    <ul className={cn("flex", className)}>
       {navLinks.map(({ id, label }) => {
         const isActive = activeId === id;
 
