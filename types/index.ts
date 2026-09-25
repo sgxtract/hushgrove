@@ -32,6 +32,20 @@ export interface Skill {
   icon?: IconComponent;
 }
 
+export type SkillVariant = "primary" | "secondary";
+
+export interface SkillGroup {
+  label: string;
+  variant: SkillVariant;
+  items: Skill[];
+}
+
+export interface SkillsContent {
+  tag: string;
+  title: string;
+  groups: SkillGroup[];
+}
+
 export interface SocialLink {
   label: string;
   href: string;
