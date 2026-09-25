@@ -20,6 +20,13 @@ export interface Profile {
   socials: SocialLink[];
 }
 
+export interface AboutContent {
+  tag: string;
+  title: string;
+  paragraphs: string[];
+  traits: string[];
+}
+
 export interface Skill {
   name: string;
   icon?: IconComponent;
