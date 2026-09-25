@@ -6,6 +6,11 @@ export type IconComponent = ComponentType<{
   "aria-hidden"?: boolean;
 }>;
 
+export interface NavLink {
+  id: string; // matches the section's id, e.g. "about"
+  label: string; // tab text, e.g. "about.tsx"
+}
+
 export interface Profile {
   name: string;
   role: string;
@@ -86,7 +91,9 @@ export interface ExperienceContent {
   items: ExperienceItem[];
 }
 
-export interface NavLink {
-  id: string; // matches the section's id, e.g. "about"
-  label: string; // tab text, e.g. "about.tsx"
+export interface ContactContent {
+  tag: string;
+  title: string;
+  message: string;
+  socialsLabel: string;
 }
